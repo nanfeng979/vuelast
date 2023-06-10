@@ -1,8 +1,8 @@
 <template>
     <div class="author-detail">
-      <h2>{{ author.authorName }}</h2>
-      <p>{{ author.authorBio }}</p>
-      <div v-for="artWorkList in author.artWorkList" :key="artWorkList.artWorkName" class="artwork">
+      <h2>{{ selectedAuthor.authorName }}</h2>
+      <p>{{ selectedAuthor.authorBio }}</p>
+      <div v-for="artWorkList in selectedAuthor.artWorkList" :key="artWorkList.artWorkName" class="artwork">
         <h3>{{ artWorkList.artWorkName }}</h3>
         <p>{{ artWorkList.artworkDescription }}</p>
       </div>
@@ -10,21 +10,27 @@
   </template>
   
 <script>
+import axios from 'axios'
 export default {
     name: 'AuthorDetail',
-    props: {
-        author: {
-            type: Object,
-            required: true
-        }
-    },
     data() {
         return {
-
+          authorList: [],
+          selectedAuthorId: 0,
+          selectedAuthor: {},
         }
     },
-    mounted() {
-        this.fetchAuthorDetails();
+    created() {
+        // this.fetchAuthorDetails();
+        axios.get('http://127.0.0.1:5000/data')
+        .then(response => {
+          this.selectedAuthor = response.data.authorList[this.$route.params.id]
+          // 获取url的id
+
+        })
+        .catch(error => {
+          console.error(error);
+        });
     },
     methods: {
         fetchAuthorDetails() {

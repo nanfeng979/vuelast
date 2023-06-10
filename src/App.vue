@@ -1,11 +1,13 @@
 <template>
   <div>
-    <AuthorShowcase :authors="authorList"></AuthorShowcase>
+    <AuthorShowcase :authors="authorList" @show-author-detail="showAuthorDetail"></AuthorShowcase>
     <CategoryBar :categories="['所有', '油画', '国画', '漫画']" @select-category="selectCategory"></CategoryBar>
     <ArtworkList v-if="!selectedArtwork" :artworks="artworks" :selected-category="selectedCategory"
       @show-artwork-detail="showArtworkDetail">
     </ArtworkList>
-    <router-view v-if="selectedArtwork" :artwork="artworks[selectedArtwork.id - 1]" :author="artworks[selectedArtwork.id - 1].authorInfo"
+    <!-- <router-view v-if="selectedArtwork" :artwork="artworks[selectedArtwork.id - 1]" :author="artworks[selectedArtwork.id - 1].authorInfo"
+      @close-artwork-detail="closeArtworkDetail"></router-view> -->
+    <router-view v-if="selectedArtwork" :artwork="artworks[selectedArtwork.id]" :author="authorList[selectedAuthor.authorId]"
       @close-artwork-detail="closeArtworkDetail"></router-view>
   </div>
 </template>
@@ -42,6 +44,11 @@ export default {
       artworks: [],
       selectedCategory: null,
       selectedArtwork: null,
+      selectedAuthor: {
+            "authorName": "",
+            "authorId": 0,
+            "authorBio": ""
+        },
     };
   },
   methods: {
@@ -73,13 +80,17 @@ export default {
     closeArtworkDetail() {
       this.selectedArtwork = null;
     },
+    showAuthorDetail(author) {
+      this.selectedArtwork = true
+      this.selectedAuthor = author
+      console.log(author.authorId)
+    }
   },
   created() {
     axios.get('http://127.0.0.1:5000/data')
       .then(response => {
         this.authorList = response.data.authorList
         this.artworks = response.data.artworks
-        console.log(response)
       })
       .catch(error => {
         console.error(error);

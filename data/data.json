@@ -1,23 +1,28 @@
 {
     "authorList": [
         {
-            "name": "文森特·梵高",
-            "bio": "文森特·威廉·梵高（Vincent Willem van Gogh，1853年3月30日—1890年7月29日），荷兰后印象派画家。代表作有《星月夜》、自画像系列、向日葵系列等。"
+            "authorName": "文森特·梵高",
+            "authorId": 0,
+            "authorBio": "文森特·威廉·梵高（Vincent Willem van Gogh，1853年3月30日—1890年7月29日），荷兰后印象派画家。代表作有《星月夜》、自画像系列、向日葵系列等。"
         },
         {
-            "name": "徐悲鸿",
-            "bio": "文森特·威廉·梵高（Vincent Willem van Gogh，1853年3月30日—1890年7月29日），荷兰后印象派画家。代表作有《星月夜》、自画像系列、向日葵系列等。"
+            "authorName": "徐悲鸿",
+            "authorId": 1,
+            "authorBio": "文森特·威廉·梵高（Vincent Willem van Gogh，1853年3月30日—1890年7月29日），荷兰后印象派画家。代表作有《星月夜》、自画像系列、向日葵系列等。"
         },
         {
-            "name": "尾田荣一郎",
-            "bio": "文森特·威廉·梵高（Vincent Willem van Gogh，1853年3月30日—1890年7月29日），荷兰后印象派画家。代表作有《星月夜》、自画像系列、向日葵系列等。"
+            "authorName": "尾田荣一郎",
+            "authorId": 2,
+            "authorBio": "文森特·威廉·梵高（Vincent Willem van Gogh，1853年3月30日—1890年7月29日），荷兰后印象派画家。代表作有《星月夜》、自画像系列、向日葵系列等。"
         }
     ],
+
     "artworks": [
         {
-            "id": 1,
+            "id": 0,
             "title": "星空",
             "artist": "Vincent Van Gogh",
+            "authorId": 0,
             "imageSrc": "assets/fangao1_xiangrikui.png",
             "category": "油画",
             "description": "这是一幅描绘星空的油画。",
@@ -37,9 +42,10 @@
             }
         },
         {
-            "id": 2,
+            "id": 1,
             "title": "奔马图",
             "artist": "徐悲鸿",
+            "authorId": 1,
             "imageSrc": "assets/guohua1.png",
             "category": "国画",
             "description": "这是一部国画。",
@@ -59,9 +65,10 @@
             }
         },
         {
-            "id": 3,
+            "id": 2,
             "title": "海贼王",
             "artist": "尾田荣一郎",
+            "authorId": 2,
             "imageSrc": "assets/manhua1.png",
             "category": "漫画",
             "description": "这是一部关于忍者的漫画。",
@@ -75,6 +82,54 @@
                     }
                 ]
             }
+        },
+        {
+            "id": 3,
+            "title": "星空",
+            "artist": "Vincent Van Gogh",
+            "imageSrc": "assets/fangao1_xiangrikui.png",
+            "category": "油画",
+            "description": "这是一幅描绘星空的油画。"
+        },
+        {
+            "id": 4,
+            "title": "虾",
+            "artist": "齐白石",
+            "imageSrc": "assets/guohua2.png",
+            "category": "国画",
+            "description": "这是一部国画。"
+        },
+        {
+            "id": 5,
+            "title": "斗罗大陆",
+            "artist": "唐家三少",
+            "imageSrc": "assets/manhua2.png",
+            "category": "漫画",
+            "description": "这是一部关于忍者的漫画。"
+        },
+        {
+            "id": 6,
+            "title": "星空",
+            "artist": "Vincent Van Gogh",
+            "imageSrc": "assets/fangao1_xiangrikui.png",
+            "category": "油画",
+            "description": "这是一幅描绘星空的油画。"
+        },
+        {
+            "id": 7,
+            "title": "事茗图",
+            "artist": "唐伯虎",
+            "imageSrc": "assets/guohua3.png",
+            "category": "国画",
+            "description": "这是一部国画。"
+        },
+        {
+            "id": 8,
+            "title": "蜘蛛侠 幽灵蜘蛛",
+            "artist": "Masashi Kishimoto",
+            "imageSrc": "assets/manhua3.png",
+            "category": "漫画",
+            "description": "这是一部关于忍者的漫画。"
         }
     ]
 }

@@ -4,11 +4,12 @@
         作者展示{{ showAuthorList ? '收起' : '展开' }}
       </button>
       <ul v-if="showAuthorList">
-        <li v-for="author in authors" :key="author.id">
-          <a href="#" @click="showAuthorDetail(author)">
-            {{ author.name }}
-          </a>
-          <h5>{{ author.bio }}</h5>
+        <li v-for="author in authors" :key="author.authorId" @click="showAuthorDetail(author)">
+          <router-link :to="`/author/${author.authorId}`">{{ author.authorName }}</router-link>
+          <!-- <a href="#">
+            {{ author.authorName }}
+          </a> -->
+          <h5>{{ author.authorBio }}</h5>
         </li> 
       </ul>
     </div>
@@ -39,8 +40,9 @@
       },
       showAuthorDetail(author) {
         // Display author details (bio, notable works, etc.)
+        this.$emit('show-author-detail', author);
       }
-    }
+    },
   }
   </script>
   

@@ -25,12 +25,12 @@ export default {
   },
   methods: {
     showArtworkDetail(artwork) {
-      const routePath = `/artwork/${artwork.id}`;
+      // const routePath = `/artwork/${artwork.id}`;
 
-      // 检查是否已经在当前位置
-      if (this.$route.path !== routePath) {
-        this.$router.push(routePath);
-      }
+      // // 检查是否已经在当前位置
+      // if (this.$route.path !== routePath) {
+      //   this.$router.push(routePath);
+      // }
 
       this.$emit('show-artwork-detail', artwork);
     }
