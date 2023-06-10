@@ -26,6 +26,10 @@
     },
     methods: {
       selectCategory(category) {
+        if(category === '我的') {
+          this.$emit('show-my');
+          return
+        }
         this.$emit('select-category', category);
       },
     },

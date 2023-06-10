@@ -1,13 +1,14 @@
 <template>
   <div>
     <AuthorShowcase :authors="authorList" @show-author-detail="showAuthorDetail"></AuthorShowcase>
-    <CategoryBar :categories="['所有', '油画', '国画', '漫画']" @select-category="selectCategory"></CategoryBar>
-    <ArtworkList v-if="!selectedArtwork" :artworks="artworks" :selected-category="selectedCategory"
+    <CategoryBar :categories="['所有', '油画', '国画', '漫画', '我的']" @select-category="selectCategory" @show-my="showMy"></CategoryBar>
+    <ArtworkList v-if="!selectedArtwork && !showMyFlag" :artworks="artworks" :selected-category="selectedCategory"
       @show-artwork-detail="showArtworkDetail">
     </ArtworkList>
+    <showMy v-if="showMyFlag"></showMy>
     <!-- <router-view v-if="selectedArtwork" :artwork="artworks[selectedArtwork.id - 1]" :author="artworks[selectedArtwork.id - 1].authorInfo"
       @close-artwork-detail="closeArtworkDetail"></router-view> -->
-    <router-view v-if="selectedArtwork" :artwork="artworks[selectedArtwork.id]" :author="authorList[selectedAuthor.authorId]"
+    <router-view v-if="selectedArtwork && !showMyFlag" :artwork="artworks[selectedArtwork.id]" :author="authorList[selectedAuthor.authorId]"
       @close-artwork-detail="closeArtworkDetail"></router-view>
   </div>
 </template>
@@ -22,6 +23,7 @@ import ChinesePainting from './components/ChinesePainting';
 import Comic from './components/Comic';
 
 import AuthorShowcase from './components/AuthorShowcase';
+import ShowMy from './components/showMy'
 
 import axios from 'axios'
 
@@ -36,6 +38,7 @@ export default {
     Comic,
 
     AuthorShowcase,
+    ShowMy,
   },
   data() {
     return {
@@ -49,10 +52,13 @@ export default {
             "authorId": 0,
             "authorBio": ""
         },
+      
+      showMyFlag: false,
     };
   },
   methods: {
     selectCategory(category) {
+      this.showMyFlag = false;
       this.selectedArtwork = null;
 
       if (category === '所有') {
@@ -67,6 +73,7 @@ export default {
       });
     },
     showArtworkDetail(artwork) {
+      this.showMyFlag = false;
       this.selectedArtwork = artwork;
 
       if (artwork.category === '油画') {
@@ -84,6 +91,9 @@ export default {
       this.selectedArtwork = true
       this.selectedAuthor = author
       console.log(author.authorId)
+    },
+    showMy() {
+      this.showMyFlag = true;
     }
   },
   created() {

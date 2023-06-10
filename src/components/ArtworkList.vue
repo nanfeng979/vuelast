@@ -25,13 +25,6 @@ export default {
   },
   methods: {
     showArtworkDetail(artwork) {
-      // const routePath = `/artwork/${artwork.id}`;
-
-      // // 检查是否已经在当前位置
-      // if (this.$route.path !== routePath) {
-      //   this.$router.push(routePath);
-      // }
-
       this.$emit('show-artwork-detail', artwork);
     }
   },
@@ -57,29 +50,6 @@ export default {
   max-width: 90%;
   justify-content: center;
 }
-
-/* .artwork-card {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-  overflow: hidden; 
-}
-
-.artwork-card img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  transition: all 0.3s ease-in-out;
-  transform-origin: center center; 
-  transform: scale(0.8); 
-}
-
-.artwork-card:hover img {
-  transform: scale(1); 
-} */
 
 .artwork-card {
   display: flex;
