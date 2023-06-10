@@ -88,9 +88,9 @@ export default {
       this.selectedArtwork = null;
     },
     showAuthorDetail(author) {
+      this.selectedArtwork = false
       this.selectedArtwork = true
       this.selectedAuthor = author
-      console.log(author.authorId)
     },
     showMy() {
       this.showMyFlag = true;
