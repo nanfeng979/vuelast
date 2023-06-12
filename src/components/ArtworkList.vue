@@ -2,7 +2,7 @@
   <div class="artwork-list">
     <div v-for="(artwork, index) in filteredArtworks" :key="index" class="artwork-card"
       @click="showArtworkDetail(artwork)">
-      <img :src="require('@/' + artwork.imageSrc)" :alt="artwork.title" />
+      <img :src="require('@/' + artwork.imageSrc)"/>
       <h3 class="title">{{ artwork.title }}</h3>
       <p class="artist">{{ artwork.artist }}</p>
       <p class="description">{{ artwork.description }}</p>

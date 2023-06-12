@@ -1,105 +1,70 @@
 <template>
-    <div class="artwork-list">
-      <div v-for="(artwork, index) in artworks" :key="index" class="artwork-card">
-        <img :src="require('@/' + artwork.imageSrc)" :alt="artwork.title" />
-        <h3 class="title">{{ artwork.title }}</h3>
-        <p class="artist">{{ artwork.artist }}</p>
-        <p class="description">{{ artwork.description }}</p>
-      </div>
+  <div class="author-detail">
+    <h2>{{ authorList[selectedAuthorId].authorName }}</h2>
+    <p>{{ authorList[selectedAuthorId].authorBio }}</p>
+    <div v-for="artWorkList in authorList[selectedAuthorId].artWorkList" :key="artWorkList.artWorkName" class="artwork">
+      <h3>{{ artWorkList.artWorkName }}</h3>
+      <p>{{ artWorkList.artworkDescription }}</p>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'ArtworkList',
-    props: {
-      artworks: {
-        type: Array,
-        required: true,
-      },
-    },
-  };
-  </script>
-  
-  <style>
-  .artwork-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
-    margin-top: 30px;
-  }
-  
-  .artwork-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .artwork-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .artwork-card:hover img {
-    transform: scale(1.1);
-  }
-  
-  .artwork-card .title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    padding: 10px;
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.8);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .artwork-card:hover .title {
-    bottom: 50%;
-  }
-  
-  .artwork-card .artist {
-    position: absolute;
-    bottom: 0;
-    left: 10px;
-    margin: 0;
-    padding: 10px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.6);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .artwork-card:hover .artist {
-    bottom: 0;
-  }
-  
-  .artwork-card .description {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 20px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .artwork-card:hover .description {
-    opacity: 1;
-  }
-  </style>
+  </div>
+</template>
+
+<script>
+import axios from 'axios'
+export default {
+  name: 'AuthorDetail',
+  data() {
+      return {
+        authorList: [{}],
+        selectedAuthor: {},
+      }
+  },
+  computed: {
+    selectedAuthorId() {
+      return this.$route.params.id
+    }
+  },
+  created() {
+      axios.get('http://127.0.0.1:5000/data')
+      .then(response => {
+        this.authorList = response.data.authorList
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },
+};
+</script>
+
+
+<style>
+.author-detail {
+text-align: center;
+}
+
+.author-detail h2 {
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+.author-detail p {
+font-size: 18px;
+color: #666;
+margin-bottom: 10px;
+}
+
+.author-detail .artwork {
+margin-top: 30px;
+}
+
+.author-detail .artwork h3 {
+font-size: 20px;
+margin-bottom: 5px;
+}
+
+.author-detail .artwork p {
+font-size: 16px;
+color: #666;
+margin-bottom: 10px;
+}
+</style>

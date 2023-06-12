@@ -1,19 +1,62 @@
 {
     "authorList": [
         {
-            "authorName": "文森特·梵高",
             "authorId": 0,
-            "authorBio": "文森特·威廉·梵高（Vincent Willem van Gogh，1853年3月30日—1890年7月29日），荷兰后印象派画家。代表作有《星月夜》、自画像系列、向日葵系列等。"
+            "authorName": "文森特·梵高",
+            "authorBio": "文森特·威廉·梵高（Vincent Willem van Gogh，1853年3月30日—1890年7月29日），荷兰后印象派画家。代表作有《星月夜》、自画像系列、向日葵系列等。",
+            "artWorkList": [
+                {
+                    "artWorkName": "向日葵",
+                    "artWorkSize": "91cm*71cm",
+                    "artWorkType": "布面油画",
+                    "artWorkYear": "1888年",
+                    "artWorkDescription": "梵高通过该系列作品向世人表达了他对生命的理解，并且展示出了他个人独特的精神世界。该系列作品也传递着这么一个信息：怀着感激之心对待家人，怀着善良之心对待他人，怀着坦诚之心对待朋友，怀着赤诚之心对待工作，怀着感恩之心对待生活，怀着一颗欣赏之心享受艺术，宛若眼前那灿若花开的向日葵。",
+                    "artWorkImageSrc": "assets/Author/文森特·梵高/fangao1.png"
+                },
+                {
+                    "artWorkName": "夜晚露天的咖啡座",
+                    "artWorkSize": "81cm*65.5cm",
+                    "artWorkType": "布面油画",
+                    "artWorkYear": "1890年",
+                    "artWorkDescription": "该画是梵高星光三部曲的第一部，画面描绘了阿尔勒一家咖啡馆的室外景色，室内温暖而明亮的黄色灯光洒在屋外鹅卵石铺成的广场上，在深蓝色的夜空中，群星闪烁，宛如朵朵灿烂的灯花。整幅画面与画家笔下的咖啡馆室内景形成了鲜明的对比，色彩明丽，气氛温馨恬适。",
+                    "artWorkImageSrc": "assets/Author/文森特·梵高/fangao2.png"
+                }
+            ]
         },
         {
-            "authorName": "徐悲鸿",
             "authorId": 1,
-            "authorBio": "文森特·威廉·梵高（Vincent Willem van Gogh，1853年3月30日—1890年7月29日），荷兰后印象派画家。代表作有《星月夜》、自画像系列、向日葵系列等。"
+            "authorName": "徐悲鸿",
+            "authorBio": "徐悲鸿是中国现代美术事业和美术教育事业的奠基者，是杰出的艺术家、教育家和收藏家，为中国美术队伍的建设和美术事业的发展作出了卓越贡献。",
+            "artWorkList": [
+                {
+                    "artWorkName": "天女散花图",
+                    "artWorkSize": "95cm*53cm",
+                    "artWorkType": "绢本设色",
+                    "artWorkYear": "1918年",
+                    "artWorkDescription": "梵高通过该系列作品向世人表达了他对生命的理解，并且展示出了他个人独特的精神世界。该系列作品也传递着这么一个信息：怀着感激之心对待家人，怀着善良之心对待他人，怀着坦诚之心对待朋友，怀着赤诚之心对待工作，怀着感恩之心对待生活，怀着一颗欣赏之心享受艺术，宛若眼前那灿若花开的向日葵。",
+                    "artWorkImageSrc": "assets/Author/文森特·梵高/fangao1.png"
+                },
+                {
+                    "artWorkName": "三马图",
+                    "artWorkSize": "90cm*174cm",
+                    "artWorkType": "纸本设色",
+                    "artWorkYear": "1919年",
+                    "artWorkDescription": "该画是梵高星光三部曲的第一部，画面描绘了阿尔勒一家咖啡馆的室外景色，室内温暖而明亮的黄色灯光洒在屋外鹅卵石铺成的广场上，在深蓝色的夜空中，群星闪烁，宛如朵朵灿烂的灯花。整幅画面与画家笔下的咖啡馆室内景形成了鲜明的对比，色彩明丽，气氛温馨恬适。",
+                    "artWorkImageSrc": "assets/Author/文森特·梵高/fangao2.png"
+                }
+
+            ]
         },
         {
-            "authorName": "尾田荣一郎",
             "authorId": 2,
-            "authorBio": "文森特·威廉·梵高（Vincent Willem van Gogh，1853年3月30日—1890年7月29日），荷兰后印象派画家。代表作有《星月夜》、自画像系列、向日葵系列等。"
+            "authorName": "尾田荣一郎",
+            "authorBio": "尾田荣一郎所著的漫画《航海王》打破吉尼斯世界纪录，成为“全球单一作者发行量最大的系列漫画",
+            "artWorkList": [
+                {
+                    "artWorkName": "海贼王",
+                    "artworkDescription": "《海贼王》是日本漫画家尾田荣一郎作画的少年漫画作品，于1997年07月22日在集英社《周刊少年Jump》开始连载。改编的电视动画《海贼王》于1999年10月20日起在富士电视台首播。"
+                }
+            ]
         }
     ],
 
@@ -23,22 +66,12 @@
             "title": "星空",
             "artist": "Vincent Van Gogh",
             "authorId": 0,
-            "imageSrc": "assets/fangao1_xiangrikui.png",
+            "imageSrc": "assets/fangao1.png",
             "category": "油画",
             "description": "这是一幅描绘星空的油画。",
             "authorInfo": {
-                "authorName": "文森特·梵高",
-                "authorBio": "文森特·威廉·梵高（Vincent Willem van Gogh，1853年3月30日—1890年7月29日），荷兰后印象派画家。代表作有《星月夜》、自画像系列、向日葵系列等。",
-                "artWorkList": [
-                    {
-                        "artWorkName": "风车磨坊",
-                        "artworkDescription": "规格: 61cm*50cm, 类型: 布面油画, 创作年份: 1886-1887年"
-                    },
-                    {
-                        "artWorkName": "奥弗的教堂",
-                        "artworkDescription": "规格: 94cm*74cm, 类型: 布面油画, 创作年份: 1890年"
-                    }
-                ]
+                "authorName": "1文森特·梵高",
+                "authorBio": "文森特·威廉·梵高（Vincent Willem van Gogh，1853年3月30日—1890年7月29日），荷兰后印象派画家。代表作有《星月夜》、自画像系列、向日葵系列等。"
             }
         },
         {
@@ -50,18 +83,8 @@
             "category": "国画",
             "description": "这是一部国画。",
             "authorInfo": {
-                "authorName": "徐悲鸿",
-                "authorBio": "徐悲鸿（1895年7月19日—1953年9月26日），原名徐寿康，汉族，江苏宜兴屺亭镇人，中国现代画家、美术教育家 [1] ，其主要绘画作品有《田横五百士》《九方皋》《漓江春雨》《晨曲》《泰戈尔像》《奔马》等。",
-                "artWorkList": [
-                    {
-                        "artWorkName": "天女散花图",
-                        "artworkDescription": "规格: 95cm*53cm, 类型: 绢本设色, 创作年份: 1918年"
-                    },
-                    {
-                        "artWorkName": "三马图",
-                        "artworkDescription": "规格: 90cm*174cm, 类型: 纸本设色, 创作年份: 1919年"
-                    }
-                ]
+                "authorName": "1徐悲鸿",
+                "authorBio": "徐悲鸿（1895年7月19日—1953年9月26日），原名徐寿康，汉族，江苏宜兴屺亭镇人，中国现代画家、美术教育家 [1] ，其主要绘画作品有《田横五百士》《九方皋》《漓江春雨》《晨曲》《泰戈尔像》《奔马》等。"
             }
         },
         {
@@ -74,13 +97,7 @@
             "description": "这是一部关于忍者的漫画。",
             "authorInfo": {
                 "authorName": "尾田荣一郎",
-                "authorBio": "尾田荣一郎（おだ えいいちろう），男，1975年1月1日出生于日本熊本县熊本市，是日本漫画家。",
-                "artWorkList": [
-                    {
-                        "artWorkName": "海贼王",
-                        "artworkDescription": "《海贼王》是日本漫画家尾田荣一郎作画的少年漫画作品，于1997年07月22日在集英社《周刊少年Jump》开始连载。改编的电视动画《海贼王》于1999年10月20日起在富士电视台首播。"
-                    }
-                ]
+                "authorBio": "尾田荣一郎（おだ えいいちろう），男，1975年1月1日出生于日本熊本县熊本市，是日本漫画家。"
             }
         },
         {
