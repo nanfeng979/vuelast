@@ -7,9 +7,9 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    likes: [3, 2, 9, 0],
-    favorites: [3, 2, 9, 0],
-    comments: [3, 2, 9, 0],
+    likes: [3, 2, 5, 0],
+    favorites: [3, 2, 5, 0],
+    comments: [3, 2, 5, 0],
   },
   getters: {
     isLiked: state => artworkId => state.likes.includes(artworkId),

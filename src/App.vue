@@ -5,7 +5,7 @@
     <ArtworkList v-if="!selectedArtwork && !showMyFlag" :artworks="artworks" :selected-category="selectedCategory"
       @show-artwork-detail="showArtworkDetail">
     </ArtworkList>
-    <showMy v-if="showMyFlag"></showMy>
+    <showMy v-if="showMyFlag" :artworks="artworks"></showMy>
     <!-- <router-view v-if="selectedArtwork" :artwork="artworks[selectedArtwork.id - 1]" :author="artworks[selectedArtwork.id - 1].authorInfo"
       @close-artwork-detail="closeArtworkDetail"></router-view> -->
     <router-view v-if="selectedArtwork && !showMyFlag" :artwork="artworks[selectedArtwork.id]" :author="authorList[selectedAuthor.authorId]"
