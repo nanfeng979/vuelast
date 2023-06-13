@@ -1,41 +1,35 @@
 <template>
-    <div class="category-bar">
-      <div
-        v-for="(category, index) in categories"
-        :key="index"
-        @click="selectCategory(category)"
-        :class="{ active: category === selectedCategory }"
-      >
-        {{ category }}
-      </div>
+  <div class="category-bar">
+    <div v-for="(category, index) in categories" :key="index" @click="selectCategory(category)"
+      :class="{ active: category === selectedCategory }">
+      {{ category }}
     </div>
-  </template>
+  </div>
+</template>
   
-  <script>
-  export default {
-    name: 'CategoryBar',
-    props: {
-      categories: {
-        type: Array,
-        required: true,
-      },
-      selectedCategory: {
-        type: String,
-        default: null,
-      },
+<script>
+export default {
+  name: 'CategoryBar',
+  props: {
+    categories: {
+      type: Array,
+      required: true,
     },
-    methods: {
-      selectCategory(category) {
-        if(category === '我的') {
-          this.$emit('show-my');
-          return
-        }
-        this.$emit('select-category', category);
-      },
+    selectedCategory: {
+      type: String,
+      default: null,
     },
-  };
-  </script>
-  
+  },
+  methods: {
+    selectCategory(category) {
+      if (category === '我的') {
+        this.$emit('show-my');
+        return
+      }
+      this.$emit('select-category', category);
+    },
+  },
+};
 </script>
   
 <style>

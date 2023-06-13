@@ -19,22 +19,20 @@
     <div class="section">
       <h2>评论过的画作</h2>
       <ul class="custom-list">
-  <li v-for="(comments, index) in ArtworksComments" :key="index">
-    <p class="artwork-title">《{{ artworks.find(item => item.id === comments.artworkId).title }}》</p>
-    <ul class="comments-list">
-      <li v-for="(comment, index_) in comments.comments" :key="index_">
-        {{ comment }}
-      </li>
-    </ul>
-  </li>
-</ul>
+        <li v-for="(comments, index) in ArtworksComments" :key="index">
+          <p class="artwork-title">《{{ artworks.find(item => item.id === comments.artworkId).title }}》</p>
+          <ul class="comments-list">
+            <li v-for="(comment, index_) in comments.comments" :key="index_">
+              {{ comment }}
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
-
 export default {
   name: 'ShowMy',
   props: {
@@ -56,7 +54,7 @@ export default {
     },
     ArtworksComments() {
       return this.$store.state.comments.map(item => {
-          return item;
+        return item;
       })
     },
   },
@@ -126,10 +124,9 @@ export default {
 }
 
 .comments-list li::before {
-  content: "•"; /* 添加自定义符号，这里使用圆点作为示例 */
-  color: #999; /* 自定义符号的颜色 */
-  font-size: 10px; /* 自定义符号的大小 */
-  margin-right: 5px; /* 自定义符号与文本之间的间距 */
+  content: "•";
+  color: #999;
+  font-size: 10px;
+  margin-right: 5px;
 }
-
 </style>

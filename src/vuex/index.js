@@ -1,5 +1,3 @@
-// store.js
-
 import Vue from 'vue';
 import Vuex from 'vuex';
 
@@ -11,38 +9,25 @@ const store = new Vuex.Store({
     favorites: [3, 2, 5, 0, 1],
     comments: [
       {
-        artworkId: 3,
-        comments: [
-          '这是3的第一条评论',
-          '这是3的第二条评论'
-        ],
-      },
-      {
         artworkId: 2,
         comments: [
-          '这是2的第一条评论',
-          '这是2的第二条评论'
-        ],
-      },
-      {
-        artworkId: 5,
-        comments: [
-          '这是5的第一条评论',
-          '这是5的第二条评论'
+          '这是《海贼王》的第一条评论',
+          '这是《海贼王》的第二条评论'
         ],
       },
       {
         artworkId: 0,
         comments: [
-          '这是0的第一条评论',
-          '这是0的第二条评论'
+          '这是《向日葵》的第一条评论',
+          '这是《向日葵》的第二条评论'
         ],
       },
       {
         artworkId: 1,
         comments: [
-          '这是1的第一条评论',
-          '这是1的第二条评论'
+          '这是《奔马图》的第一条评论',
+          '这是《奔马图》的第二条评论',
+          '这是《奔马图》的第三条评论',
         ],
       }
     ],

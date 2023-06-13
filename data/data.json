@@ -54,7 +54,11 @@
             "artWorkList": [
                 {
                     "artWorkName": "海贼王",
-                    "artworkDescription": "《海贼王》是日本漫画家尾田荣一郎作画的少年漫画作品，于1997年07月22日在集英社《周刊少年Jump》开始连载。改编的电视动画《海贼王》于1999年10月20日起在富士电视台首播。"
+                    "artWorkSize": "95cm*53cm",
+                    "artWorkType": "绢本设色",
+                    "artWorkYear": "1918年",
+                    "artworkDescription": "《海贼王》是日本漫画家尾田荣一郎作画的少年漫画作品，于1997年07月22日在集英社《周刊少年Jump》开始连载。改编的电视动画《海贼王》于1999年10月20日起在富士电视台首播。",
+                    "artWorkImageSrc": "assets/Author/文森特·梵高/fangao2.png"
                 }
             ]
         }
@@ -68,7 +72,7 @@
             "authorId": 0,
             "imageSrc": "assets/fangao1.png",
             "category": "油画",
-            "description": "这是一幅描绘星空的油画。",
+            "description": "这是一幅描绘向日葵的油画。",
             "authorInfo": {
                 "authorName": "1文森特·梵高",
                 "authorBio": "文森特·威廉·梵高（Vincent Willem van Gogh，1853年3月30日—1890年7月29日），荷兰后印象派画家。代表作有《星月夜》、自画像系列、向日葵系列等。"
@@ -94,7 +98,7 @@
             "authorId": 2,
             "imageSrc": "assets/manhua1.png",
             "category": "漫画",
-            "description": "这是一部关于忍者的漫画。",
+            "description": "这是一部关于海贼的漫画。",
             "authorInfo": {
                 "authorName": "尾田荣一郎",
                 "authorBio": "尾田荣一郎（おだ えいいちろう），男，1975年1月1日出生于日本熊本县熊本市，是日本漫画家。"

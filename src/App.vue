@@ -1,29 +1,27 @@
 <template>
   <div>
     <AuthorShowcase :authors="authorList" @show-author-detail="showAuthorDetail"></AuthorShowcase>
-    <CategoryBar :categories="['所有', '油画', '国画', '漫画', '我的']" @select-category="selectCategory" @show-my="showMy"></CategoryBar>
+    <CategoryBar :categories="['所有', '油画', '国画', '漫画', '我的']" @select-category="selectCategory" @show-my="showMy">
+    </CategoryBar>
     <ArtworkList v-if="!selectedArtwork && !showMyFlag" :artworks="artworks" :selected-category="selectedCategory"
       @show-artwork-detail="showArtworkDetail">
     </ArtworkList>
     <showMy v-if="showMyFlag" :artworks="artworks"></showMy>
-    <!-- <router-view v-if="selectedArtwork" :artwork="artworks[selectedArtwork.id - 1]" :author="artworks[selectedArtwork.id - 1].authorInfo"
-      @close-artwork-detail="closeArtworkDetail"></router-view> -->
-    <router-view v-if="selectedArtwork && !showMyFlag" :artwork="artworks[selectedArtwork.id]" :author="authorList[selectedAuthor.authorId]"
-      @close-artwork-detail="closeArtworkDetail"></router-view>
+    <router-view v-if="selectedArtwork && !showMyFlag" :artwork="artworks[selectedArtwork.id]"
+      :author="authorList[selectedAuthor.authorId]" @close-artwork-detail="closeArtworkDetail"></router-view>
   </div>
 </template>
   
 <script>
 import CategoryBar from './components/CategoryBar';
 import ArtworkList from './components/ArtworkList';
-import ArtworkDetail from './components/ArtworkDetail';
 
 import OilPainting from './components/OilPainting';
 import ChinesePainting from './components/ChinesePainting';
 import Comic from './components/Comic';
 
 import AuthorShowcase from './components/AuthorShowcase';
-import ShowMy from './components/showMy'
+import ShowMy from './components/ShowMy'
 
 import axios from 'axios'
 
@@ -31,7 +29,6 @@ export default {
   components: {
     CategoryBar,
     ArtworkList,
-    ArtworkDetail,
 
     OilPainting,
     ChinesePainting,
@@ -43,16 +40,14 @@ export default {
   data() {
     return {
       authorList: [],
-
       artworks: [],
       selectedCategory: null,
       selectedArtwork: null,
       selectedAuthor: {
-            "authorName": "",
-            "authorId": 0,
-            "authorBio": ""
-        },
-      
+        "authorName": "",
+        "authorId": 0,
+        "authorBio": ""
+      },
       showMyFlag: false,
     };
   },

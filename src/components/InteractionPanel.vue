@@ -42,7 +42,7 @@ export default {
     },
     comments() {
       return this.$store.state.comments.map(item => {
-        if(item.artworkId === this.artwork.id) {
+        if (item.artworkId === this.artwork.id) {
           return item.comments;
         }
       })
@@ -72,7 +72,6 @@ export default {
     },
   },
 };
-
 </script>
   
 <style>
@@ -109,4 +108,3 @@ export default {
   padding: 0;
 }
 </style>
-  

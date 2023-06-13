@@ -2,7 +2,7 @@
   <div class="artwork-list">
     <div v-for="(artwork, index) in filteredArtworks" :key="index" class="artwork-card"
       @click="showArtworkDetail(artwork)">
-      <img :src="require('@/' + artwork.imageSrc)"/>
+      <img :src="require('@/' + artwork.imageSrc)" />
       <h3 class="title">{{ artwork.title }}</h3>
       <p class="artist">{{ artwork.artist }}</p>
       <p class="description">{{ artwork.description }}</p>
@@ -29,7 +29,6 @@ export default {
     }
   },
   computed: {
-
     filteredArtworks() {
       if (!this.selectedCategory) {
         return this.artworks;
@@ -59,8 +58,6 @@ export default {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   overflow: hidden;
-  
-  
 }
 
 .artwork-card img {
@@ -73,7 +70,7 @@ export default {
 }
 
 .artwork-card:hover img {
-  transform: scale(1); 
+  transform: scale(1);
   clip-path: none;
 }
 
