@@ -6,7 +6,7 @@
         <router-link :to="`/author/${artwork.authorId}`">{{ artwork.artist }}</router-link>
         <p>{{ artwork.description }}</p>
       </div>
-      <interaction-panel></interaction-panel>
+      <interaction-panel :artwork="artwork"></interaction-panel>
     </div>
   </template>
   
