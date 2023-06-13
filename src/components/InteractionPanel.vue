@@ -16,8 +16,8 @@
       <ul>
         <li v-for="(comment_, index_) in comments" :key="index_">
           <p v-for="(comment, index) in comment_" :key="index">
-          <span>{{ comment }}</span>
-        </p>
+            <span>{{ comment }}</span>
+          </p>
         </li>
       </ul>
     </div>
@@ -45,21 +45,11 @@ export default {
       return this.$store.state.favorites.includes(this.artwork.id);
     },
     comments() {
-      // return this.$store.state.comments.filter(comment => comment.artworkId === this.artwork.id);
-      // return Object.keys(this.$store.state.comments).filter(id => id === this.artwork.id);
-      return Object.keys(this.$store.state.comments)
-      .map(id => {
-        if(id == this.artwork.id) {
-          return this.$store.state.comments[id]
+      return this.$store.state.comments.map(item => {
+        if(item.artworkId === this.artwork.id) {
+          return item.comments;
         }
-        
       })
-      // .map(id => {
-      //   return {
-      //     id: Number(id),
-      //     content: this.$store.state.comments[id]
-      //   };
-      // })
     }
   },
   methods: {

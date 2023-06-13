@@ -16,14 +16,19 @@
         </li>
       </ul>
     </div>
-    <!-- <div class="section">
+    <div class="section">
       <h2>评论过的画作</h2>
-      <ul>
-        <li v-for="comment in comments" :key="comment.id">
-          {{ comment.content }}
-        </li>
-      </ul>
-    </div> -->
+      <ul class="custom-list">
+  <li v-for="(comments, index) in ArtworksComments" :key="index">
+    <p class="artwork-title">《{{ artworks.find(item => item.id === comments.artworkId).title }}》</p>
+    <ul class="comments-list">
+      <li v-for="(comment, index_) in comments.comments" :key="index_">
+        {{ comment }}
+      </li>
+    </ul>
+  </li>
+</ul>
+    </div>
   </div>
 </template>
 
@@ -49,9 +54,11 @@ export default {
         return this.artworks.find(artwork => artwork.id === likesId);
       });
     },
-    // likedArtworks() {
-    //   return this.artworks.filter(artwork => this.likes.includes(artwork.id));
-    // },
+    ArtworksComments() {
+      return this.$store.state.comments.map(item => {
+          return item;
+      })
+    },
   },
 };
 </script>
@@ -88,4 +95,41 @@ export default {
 .section li {
   margin-bottom: 5px;
 }
+
+.custom-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-list li {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.artwork-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comments-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comments-list li {
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.comments-list li::before {
+  content: "•"; /* 添加自定义符号，这里使用圆点作为示例 */
+  color: #999; /* 自定义符号的颜色 */
+  font-size: 10px; /* 自定义符号的大小 */
+  margin-right: 5px; /* 自定义符号与文本之间的间距 */
+}
+
 </style>
