@@ -10,13 +10,17 @@
     <div v-if="showCommentForm" class="comment-form">
       <textarea v-model="comment" placeholder="请输入评论"></textarea>
       <button @click="addComment">提交评论</button>
-    </div>
+    </div> -->
     <div v-if="comments.length" class="comments">
       <h3>评论列表</h3>
       <ul>
-        <li v-for="(comment, index) in comments" :key="index">{{ comment }}</li>
+        <li v-for="(comment_, index_) in comments" :key="index_">
+          <p v-for="(comment, index) in comment_" :key="index">
+          <span>{{ comment }}</span>
+        </p>
+        </li>
       </ul>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -41,7 +45,21 @@ export default {
       return this.$store.state.favorites.includes(this.artwork.id);
     },
     comments() {
-      return this.$store.state.comments.filter(comment => comment.artworkId === this.artwork.id);
+      // return this.$store.state.comments.filter(comment => comment.artworkId === this.artwork.id);
+      // return Object.keys(this.$store.state.comments).filter(id => id === this.artwork.id);
+      return Object.keys(this.$store.state.comments)
+      .map(id => {
+        if(id == this.artwork.id) {
+          return this.$store.state.comments[id]
+        }
+        
+      })
+      // .map(id => {
+      //   return {
+      //     id: Number(id),
+      //     content: this.$store.state.comments[id]
+      //   };
+      // })
     }
   },
   methods: {

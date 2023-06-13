@@ -8,8 +8,61 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     likes: [3, 2, 5, 0],
-    favorites: [3, 2, 5, 0],
-    comments: [3, 2, 5, 0],
+    favorites: [3, 2, 5, 0, 1],
+    comments1: [
+      {
+        artworkId: 3,
+        comments: {
+          comment1: '这是3',
+        },
+      },
+      {
+        artworkId: 2,
+        comments: {
+          comment1: '这是2',
+        },
+      },
+      {
+        artworkId: 5,
+        comments: {
+          comment1: '这是5',
+        },
+      },
+      {
+        artworkId: 0,
+        comments: {
+          comment1: '这是0',
+        }
+      },
+      {
+        artworkId: 1,
+        comments: {
+          comment1: '这是1',
+        }
+      }
+    ],
+    comments: {
+      '3': [
+        '这是3的第一条评论',
+        '这是3的第二条评论',
+      ],
+      '2': [
+        '这是2的第一条评论',
+        '这是2的第二条评论',
+      ],
+      '5': [
+        '这是5的第一条评论',
+        '这是5的第二条评论',
+      ],
+      '9': [
+        '这是9的第一条评论',
+        '这是9的第二条评论',
+      ],
+      '1': [
+        '这是1的第一条评论',
+        '这是1的第二条评论',
+      ],
+    }
   },
   getters: {
     isLiked: state => artworkId => state.likes.includes(artworkId),
