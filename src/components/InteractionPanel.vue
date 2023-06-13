@@ -9,7 +9,7 @@
     <button @click="toggleCommentForm">评论</button>
     <div v-if="showCommentForm" class="comment-form">
       <textarea v-model="comment" placeholder="请输入评论"></textarea>
-      <button @click="addComment">提交评论</button>
+      <button @click="addNewComment">提交评论</button>
     </div>
     <div v-if="comments.length" class="comments">
       <h3>评论列表</h3>
@@ -64,9 +64,9 @@ export default {
     toggleCommentForm() {
       this.showCommentForm = !this.showCommentForm;
     },
-    addComment() {
+    addNewComment() {
       if (this.comment) {
-        this.$store.dispatch('addComment', { artworkId: this.artwork.id, comment: this.comment });
+        this.$store.dispatch('addNewComment', { artworkId: this.artwork.id, comment: this.comment });
         this.comment = '';
       }
     },

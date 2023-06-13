@@ -104,7 +104,6 @@ export default {
 
 .custom-list li {
   margin-bottom: 10px;
-  text-align: left;
 }
 
 .artwork-title {

@@ -50,16 +50,16 @@ const store = new Vuex.Store({
         Vue.set(state.favorites, state.favorites.length, artworkId);
       }
     },
-    addComment(state, { artworkId, comment }) {
-      const targetComment = state.comments.find(c => c.artworkId === artworkId);
+    addNewComment(state, { artworkId, comment }) {
+      const targetComment = state.comments.find(comment => comment.artworkId === artworkId);
       if (targetComment) {
-        targetComment.comments.push(comment);
+        // targetComment.comments.push(comment);
+        Vue.set(targetComment.comments, targetComment.comments.length, comment);
       } else {
-        const newComment = {
+        state.comments.push({
           artworkId,
           comments: [comment],
-        };
-        commit('addNewComment', newComment);
+        });
       }
     },
   },
@@ -70,8 +70,8 @@ const store = new Vuex.Store({
     toggleFavorite({ commit }, artworkId) {
       commit('toggleFavorite', artworkId);
     },
-    addComment({ commit }, { artworkId, comment }) {
-      commit('addComment', { artworkId, comment });
+    addNewComment({ commit }, { artworkId, comment }) {
+      commit('addNewComment', { artworkId, comment });
     },
   },
 });

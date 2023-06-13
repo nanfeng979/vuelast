@@ -58,7 +58,7 @@
                     "artWorkType": "绢本设色",
                     "artWorkYear": "1918年",
                     "artworkDescription": "《海贼王》是日本漫画家尾田荣一郎作画的少年漫画作品，于1997年07月22日在集英社《周刊少年Jump》开始连载。改编的电视动画《海贼王》于1999年10月20日起在富士电视台首播。",
-                    "artWorkImageSrc": "assets/Author/文森特·梵高/fangao2.png"
+                    "artWorkImageSrc": "assets/Author/尾田荣一郎/weitianrongyilang1.png"
                 }
             ]
         }
@@ -68,7 +68,7 @@
         {
             "id": 0,
             "title": "星空",
-            "artist": "Vincent Van Gogh",
+            "artist": "文森特·梵高",
             "authorId": 0,
             "imageSrc": "assets/fangao1.png",
             "category": "油画",
@@ -106,9 +106,9 @@
         },
         {
             "id": 3,
-            "title": "星空",
+            "title": "咖啡座",
             "artist": "Vincent Van Gogh",
-            "imageSrc": "assets/fangao1_xiangrikui.png",
+            "imageSrc": "assets/fangao2.png",
             "category": "油画",
             "description": "这是一幅描绘星空的油画。"
         },
@@ -130,9 +130,9 @@
         },
         {
             "id": 6,
-            "title": "星空",
+            "title": "咖啡座",
             "artist": "Vincent Van Gogh",
-            "imageSrc": "assets/fangao1_xiangrikui.png",
+            "imageSrc": "assets/fangao2.png",
             "category": "油画",
             "description": "这是一幅描绘星空的油画。"
         },
