@@ -6,11 +6,11 @@
     <button @click="toggleFavorite" :class="{ active: isFavorite }">
       {{ isFavorite ? '取消收藏' : '收藏' }}
     </button>
-    <!-- <button @click="toggleCommentForm">评论</button>
+    <button @click="toggleCommentForm">评论</button>
     <div v-if="showCommentForm" class="comment-form">
       <textarea v-model="comment" placeholder="请输入评论"></textarea>
       <button @click="addComment">提交评论</button>
-    </div> -->
+    </div>
     <div v-if="comments.length" class="comments">
       <h3>评论列表</h3>
       <ul>
@@ -23,12 +23,8 @@
     </div>
   </div>
 </template>
-
-
   
 <script>
-import { mapState, mapActions } from 'vuex';
-
 export default {
   name: 'InteractionPanel',
   props: {
@@ -52,12 +48,21 @@ export default {
       })
     }
   },
+  data() {
+    return {
+      showCommentForm: false,
+      comment: '',
+    };
+  },
   methods: {
     toggleLike() {
       this.$store.dispatch('toggleLike', this.artwork.id);
     },
     toggleFavorite() {
       this.$store.dispatch('toggleFavorite', this.artwork.id);
+    },
+    toggleCommentForm() {
+      this.showCommentForm = !this.showCommentForm;
     },
     addComment() {
       if (this.comment) {

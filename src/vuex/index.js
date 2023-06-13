@@ -13,61 +13,39 @@ const store = new Vuex.Store({
       {
         artworkId: 3,
         comments: [
-          '这是3的第一条评论', 
+          '这是3的第一条评论',
           '这是3的第二条评论'
         ],
       },
       {
         artworkId: 2,
         comments: [
-          '这是2的第一条评论', 
+          '这是2的第一条评论',
           '这是2的第二条评论'
         ],
       },
       {
         artworkId: 5,
         comments: [
-          '这是5的第一条评论', 
+          '这是5的第一条评论',
           '这是5的第二条评论'
         ],
       },
       {
         artworkId: 0,
         comments: [
-          '这是0的第一条评论', 
+          '这是0的第一条评论',
           '这是0的第二条评论'
         ],
       },
       {
         artworkId: 1,
         comments: [
-          '这是1的第一条评论', 
+          '这是1的第一条评论',
           '这是1的第二条评论'
         ],
       }
     ],
-    comments1: {
-      '3': [
-        '这是3的第一条评论',
-        '这是3的第二条评论',
-      ],
-      '2': [
-        '这是2的第一条评论',
-        '这是2的第二条评论',
-      ],
-      '5': [
-        '这是5的第一条评论',
-        '这是5的第二条评论',
-      ],
-      '9': [
-        '这是9的第一条评论',
-        '这是9的第二条评论',
-      ],
-      '1': [
-        '这是1的第一条评论',
-        '这是1的第二条评论',
-      ],
-    }
   },
   getters: {
     isLiked: state => artworkId => state.likes.includes(artworkId),
@@ -88,10 +66,16 @@ const store = new Vuex.Store({
       }
     },
     addComment(state, { artworkId, comment }) {
-      if (!state.comments[artworkId]) {
-        Vue.set(state.comments, artworkId, []);
+      const targetComment = state.comments.find(c => c.artworkId === artworkId);
+      if (targetComment) {
+        targetComment.comments.push(comment);
+      } else {
+        const newComment = {
+          artworkId,
+          comments: [comment],
+        };
+        commit('addNewComment', newComment);
       }
-      state.comments[artworkId].push(comment);
     },
   },
   actions: {

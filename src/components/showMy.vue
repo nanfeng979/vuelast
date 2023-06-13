@@ -4,7 +4,7 @@
       <h2>收藏的画作</h2>
       <ul>
         <li v-for="artwork in favoriteArtworks" :key="artwork.id">
-          {{ artwork.title }}
+          《{{ artwork.title }}》
         </li>
       </ul>
     </div>
@@ -12,7 +12,7 @@
       <h2>点赞的画作</h2>
       <ul>
         <li v-for="artwork in likedArtworks" :key="artwork.id">
-          {{ artwork.title }}
+          《{{ artwork.title }}》
         </li>
       </ul>
     </div>
