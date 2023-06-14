@@ -5,6 +5,7 @@
       <h2>{{ artwork.title }}</h2>
       <router-link :to="`/author/${artwork.authorId}`">{{ artwork.artist }}</router-link>
       <p>{{ artwork.description }}</p>
+      <h5>参考价值：无价之宝</h5>
     </div>
     <interaction-panel :artwork="artwork"></interaction-panel>
   </div>

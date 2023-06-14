@@ -3,7 +3,7 @@
     <button @click="toggleAuthorList" :class="horizontal ? 'horizontal' : 'vertical'">
       作者展示{{ showAuthorList ? '收起' : '展开' }}
     </button>
-    <ul v-if="showAuthorList" class="author-list">
+    <ul v-show="showAuthorList" class="author-list">
       <li v-for="author in authors" :key="author.authorId" @click="showAuthorDetail(author)" class="author">
         <router-link :to="`/author/${author.authorId}`" class="author-link">{{ author.authorName }}</router-link>
         <p class="author-bio">{{ author.authorBio }}</p>
