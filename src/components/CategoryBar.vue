@@ -1,7 +1,6 @@
 <template>
   <div class="category-bar">
-    <div v-for="(category, index) in categories" :key="index" @click="selectCategory(category)"
-      :class="{ active: category === selectedCategory }">
+    <div v-for="(category, index) in categories" :key="index" @click="selectCategory(category)">
       {{ category }}
     </div>
   </div>
@@ -14,10 +13,6 @@ export default {
     categories: {
       type: Array,
       required: true,
-    },
-    selectedCategory: {
-      type: String,
-      default: null,
     },
   },
   methods: {

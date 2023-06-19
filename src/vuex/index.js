@@ -32,9 +32,6 @@ const store = new Vuex.Store({
       }
     ],
   },
-  getters: {
-    isLiked: state => artworkId => state.likes.includes(artworkId),
-  },
   mutations: {
     toggleLike(state, artworkId) {
       if (state.likes.includes(artworkId)) {
